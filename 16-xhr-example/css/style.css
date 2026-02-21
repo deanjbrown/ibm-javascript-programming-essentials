@@ -1,0 +1,65 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+section {
+  padding: 20px 10px;
+}
+
+h1 {
+  font-size: 2em;
+  color: #333;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+.myButton {
+  font-size: 1em;
+  background-color: #3331d4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#post-data-container {
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.post {
+  width: calc(25% - 16px);
+  box-sizing: border-box;
+  border: solid 1px #ddd;
+  padding: 1em;
+  margin: 0;
+}
+
+.postTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.postBody {
+  font-size: 1.2em;
+}

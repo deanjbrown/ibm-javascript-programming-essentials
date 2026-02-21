@@ -1,0 +1,24 @@
+.myButton {
+  background-color: #3331d4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.redText {
+  color: #d43131;
+}
+
+.blueText {
+  color: #3331d4;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+.bigText {
+  font-size: 2em;
+}
