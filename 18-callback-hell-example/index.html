@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback Hell Example</title>
+  </head>
+  <body>
+    <h1>Callback Hell Example</h1>
+    <p>
+      This example demonstrates how callbacks are used and how they can lead to
+      convoluted and unreadable code. Sometimes referred to as "callback hell"
+    </p>
+    <script>
+      // This function simulates retrieving user info from an API.
+      // Its waits for 3 seconds and then calls the callback function passed in
+      function getUserInfo(userId, callback) {
+        setTimeout(() => {
+          const userInfo = {
+            username: "joedoe123",
+            email: "johndoe123@test.com",
+          };
+          callback(userInfo);
+        }, 3000);
+      }
+
+      // This function simulates retrieving user posts from an API
+      // It waits for 3 seconds and then calls the callback function passed in
+      function getUserPosts(userId, callback) {
+        setTimeout(() => {
+          const userPosts = [
+            {
+              postId: 1,
+              postTitle: "This is the post title",
+              postDetail: "This is the post's details",
+            },
+            {
+              postId: 2,
+              postTitle: "This is the second post title",
+              postDetail: "This is the second post's details",
+            },
+          ];
+          callback(userPosts);
+        }, 3000);
+      }
+
+      // Get the user's info and pass an anonymous function as the callback
+      getUserInfo(1, (userInfo) => {
+        console.log("User info: ", userInfo);
+
+        // Get the user's posts and pass an anonymous function as the callback
+        getUserPosts(1, (userPosts) => {
+          console.log("User posts: ", userPosts);
+          // Then you would display the user's posts on the page
+          // You can see how this could potentially get very messy!
+        });
+      });
+    </script>
+  </body>
+</html>

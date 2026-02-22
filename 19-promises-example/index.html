@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises Example</title>
+  </head>
+  <body>
+    <h1>Promises Example</h1>
+    <p>This is an example of how to to create a promise and then consume it</p>
+
+    <script>
+      // Create a new promise that returns user info when it resolves after a timeout
+      function getUserInfo(userId) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            const userInfo = { name: "John Doe", username: "johndoe123" };
+            resolve(userInfo);
+          }, 3000);
+        });
+      }
+
+      // Create a new promise that returns user posts when it resolves after a timeout
+      function getUserPosts(userId) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            const userPosts = [
+              {
+                postId: 1,
+                postTitle: "This is the post title",
+                postDetail: "This is the post's details",
+              },
+              {
+                postId: 2,
+                postTitle: "This is the second post title",
+                postDetail: "This is the second post's details",
+              },
+            ];
+            resolve(userPosts);
+          }, 3000);
+        });
+      }
+
+      // Use promise chaining to execute these asynchronous promises
+      getUserInfo(1)
+        .then((userInfo) => {
+          console.log("User info: ", userInfo);
+          return getUserPosts(1);
+        })
+        .then((userPosts) => {
+          console.log("User posts: ", userPosts);
+        })
+        // We can even catch errors
+        .catch((error) => {
+          console.log("An error occurred: ", error);
+        });
+    </script>
+  </body>
+</html>
